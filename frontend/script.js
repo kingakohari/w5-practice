@@ -144,7 +144,7 @@ console.log({}==={}); */
 }) */
 
 function loadEvent() {
-    console.log("My second function")
+    let rootElement = document.getElementById("root");
 
     let card2 = function (title, year, rate){
         return `
@@ -155,6 +155,8 @@ function loadEvent() {
        </div>
     `;
 };
+    
+    rootElement.insertAdjacentHTML("beforeend", card2(movies[7]));
 
     let favMovie = {
         "title": "Moulin Rouge",
@@ -173,10 +175,10 @@ function loadEvent() {
     rootElement.insertAdjacentHTML("beforeend", card2(anotherFavMovie.title, anotherFavMovie.year, anotherFavMovie.rate));
 
     for (const movieSend of movies) {
-
+        
         /* movie.title = "Hello!" */
 
-       rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, movieSend.rate));
+        rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, movieSend.rate));
     }
     
     console.log(movies);
