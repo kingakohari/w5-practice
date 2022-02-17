@@ -19,17 +19,18 @@ function loadEvent() {
         // minden lépcsőjénél hozzáadja a renderedCardList-hez az adott elemet a megfelelő div card-ban
         // return az elkészült elemekkel feltöltött card list-et (stringekkel)
         for (const incomingMovie of incomingMoviesArray) {
-            renderedCardList += card2(incomingMovie.title, incomingMovie.year, incomingMovie.rate)
-            // renderedCardList += `
-            // <div class="card">
-            //     <h2>${incomingMovie.title}</h2>
-            //     <div class="time">${incomingMovie.year}</div>
-            //     <div class="rate">${incomingMovie.rate}</div>
-            // </div>
-            //     `
-        }
-        renderedCardList += `</div>`
-        console.log(renderedCardList)
+           
+            renderedCardList += `
+                <div class="card">
+                    <h2>${incomingMovie.title}</h2>
+                    <div class="time">${incomingMovie.year}</div>
+                    <div class="rate">${incomingMovie.rate}</div>
+                </div>
+                    ` 
+            }
+        
+        console.log(renderedCardList);
+        
         return renderedCardList
     }
 
@@ -40,13 +41,14 @@ function loadEvent() {
     for (const movieSend of movies) {
         if (movieSend.year > 2000 && movieSend.rate >= 8) {
             newGoodMovies.push(movieSend);
-            // rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, floorRate));
+
+            // rootElement.insertAdjacentHTML("beforeend", card2(movieSend.title, movieSend.year, floorRate)); -> Math.floor(rate) lefelé kerekít
         }
     }
     newGoodMovies.sort(function(a, b){return a.year - b.year})
 
     rootElement.insertAdjacentHTML("beforeend", renderAllCardElements(newGoodMovies));
-    // beküld a renderAllCardElementhez 
+    // beküldi a renderAllCardElement-hez 
 }
 
 window.addEventListener("load", loadEvent);
