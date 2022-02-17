@@ -17,10 +17,11 @@ function loadEvent() {
 
         let renderedCardList = "";  
         
-        //for ciklus, végigmegy a movies array-n -> minden lépcsőjénél hozzáadja a renderedCardList-hez az adott elemet a megfelelő div card-ban -> returnöli az elkészült elemekkel feltöltött cardList-et//
+        //for ciklus végigmegy az incoming movies array-n//
         
         for (const incomingMovie of incomingMoviesArray){
-            renderedCardList += `
+
+            renderedCardList += ` 
             <div class="card">
                 <h2>${incomingMovie.title}</h2>
                 <time>${incomingMovie.year}</time>
@@ -28,9 +29,11 @@ function loadEvent() {
             </div>
             `;
         }
+        //for ciklus minden lépcsőjénél hozzáadja a renderedCardList-hez az adott elemet a megfelelő div card-ban//
 
         console.log(renderedCardList);
-
+        
+        //returnöli az elkészült elemekkel feltöltött cardList-et//
         return renderedCardList;
     }
 
