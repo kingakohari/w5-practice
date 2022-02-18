@@ -39,7 +39,7 @@ select {
   grid-template-columns: 30% 30% 30%;  */
   grid-template: auto / 30% 30% 30% ;
   grid-template-areas: 
-    "head head head"
+    "head head img"
     "main main main";
   width: 100%;
   max-width: 1200px;
@@ -65,6 +65,14 @@ select {
 
 #root > .main {
   grid-area: main;
+}
+
+#popcorn {
+  grid-area: img;
+  object-fit: cover;
+  width: 200px;
+  height: 200px
+  
 }
 
 
